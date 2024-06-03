@@ -1,0 +1,22 @@
+services:
+  my-sql:
+    image: mysql:8.0
+    environment:
+      MYSQL_PASSWORD: pass
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbstore:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_ARBITRARY: 1
+    ports:
+      - "8081:80"
+
+volumes:
+  dbstore:

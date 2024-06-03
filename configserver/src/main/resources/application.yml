@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: "configserver"
+  profiles:
+    active: git
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:PawelKwidzinski/personal-dashboard-config.git
+          default-label: main
+          timeout: 5
+          clone-on-start: true
+          ignore-local-ssh-settings: true
+          private-key: ${{secrets.CONFIGSERVER_PRIVATE_SSH_KEY}}
+
+encrypt:
+  key: ${{secrets.CONFIGSERVER_ENCRYPT_KEY}}
+
+server:
+  port: 8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
