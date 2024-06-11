@@ -1,21 +1,15 @@
 package pl.kwidzinski.job4devs_ms.model;
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.Data;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@NoArgsConstructor
-@Getter
-@Setter
-@Entity
-@AllArgsConstructor
+@Data
+@Document
 public class JobSkill {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long skillId;
+    private String skillId;
     private String skill;
     private String level;
 
