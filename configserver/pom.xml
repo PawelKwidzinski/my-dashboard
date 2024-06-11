@@ -51,6 +51,26 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			<plugin>
+				<groupId>com.google.cloud.tools</groupId>
+				<artifactId>jib-maven-plugin</artifactId>
+				<version>3.4.1</version>
+				<configuration>
+					<!--If is a problem with create image you must login in cmd: -->
+					<!--docker login registry-1.docker.io-->
+					<!--enter your credentials for dockerhub-->
+
+					<!--to build docker image run this command:-->
+					<!--mvn compile jib:dockerBuild-->
+					<from>
+						<image>eclipse-temurin:21-jre</image>
+					</from>
+					<to>
+						<image>solvap/${project.artifactId}:v1</image>
+					</to>
+
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
