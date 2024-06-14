@@ -1,5 +1,6 @@
 package pl.kwidzinski.job4devs_ms.controller;
 
+import jakarta.annotation.Nullable;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,7 +18,7 @@ public class JobOfferController {
     private final JobService jobService;
 
     @GetMapping("/justJoinIt/{location}/{technology}")
-    public List<JobOffer> getDevJobs(@PathVariable("location") String location, @PathVariable("technology") String technology) {
+    public List<JobOffer> getDevJobs(@PathVariable("location") String location, @Nullable @PathVariable("technology") String technology) {
         jobService.saveJobOffers(location, technology);
         return jobService.getAllJobOffers();
     }
