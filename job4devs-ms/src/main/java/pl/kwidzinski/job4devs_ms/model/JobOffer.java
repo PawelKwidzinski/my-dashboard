@@ -16,9 +16,10 @@ public class JobOffer {
     private String id;
     @Indexed(unique = true)
     private String url;
-    private String location;
     private String technology;
-    private List<JobSkill> jobSkills;
     private LocalDateTime creationTime;
+    private BasicInfo basicInfo;
+    private JobDetails jobDetails;
+    private List<JobSkill> jobSkills;
 
 }
