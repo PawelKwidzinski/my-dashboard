@@ -14,12 +14,15 @@ management:
 server:
   port: 8080
 
-css:
-  query:
-    for:
-      employer: "div.css-u51ts9"
-      workplace: "div.css-1seeldo"
-      position: "div.css-vb54bv > h1"
-      detail: "div.css-6q28fo > div"
-      skill: "h6.MuiTypography-root.MuiTypography-subtitle2"
-      level: "span.MuiTypography-root.MuiTypography-subtitle4"
+justjoinit:
+  param:
+    location:
+      all-locations: "all-locations"
+      trojmiasto: "trojmiasto"
+    technology:
+      java: "java"
+    experience:
+      junior: "experience-level_junior"
+      mid: "experience-level_mid"
+      senior: "experience-level_senior"
+    remote: "remote_yes"
