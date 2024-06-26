@@ -4,9 +4,9 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.time.LocalDateTime;
-import java.util.List;
+import java.time.LocalDate;
 
 @Data
 @Document
@@ -17,9 +17,11 @@ public class JobOffer {
     @Indexed(unique = true)
     private String url;
     private String technology;
-    private LocalDateTime creationTime;
-    private BasicInfo basicInfo;
-    private JobDetails jobDetails;
-    private List<JobSkill> jobSkills;
-
+    private String location;
+    private String experience;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate created;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate lastAppearance;
+    private Boolean remote;
 }
