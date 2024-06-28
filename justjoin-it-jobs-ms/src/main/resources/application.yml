@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: "just-join-it-jobs-ms"
+  profiles:
+    active: "dev"
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+server:
+  port: 8080
+
+justjoinit:
+  param:
+    location:
+      all-locations: "all-locations"
+      trojmiasto: "trojmiasto"
+    technology:
+      java: "java"
+    experience:
+      junior: "experience-level_junior"
+      mid: "experience-level_mid"
+      senior: "experience-level_senior"
+    remote: "remote_yes"
