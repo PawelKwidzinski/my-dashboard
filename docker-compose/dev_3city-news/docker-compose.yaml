@@ -1,7 +1,7 @@
 services:
   mongodb:
     image: mongo:latest
-    container_name: ptc-it_mongodb
+    container_name: 3city_mongodb
     ports:
       - "27018:27017"
     environment:
@@ -12,7 +12,7 @@ services:
 
   mongo-express:
     image: mongo-express:latest
-    container_name: ptc-it_mongo_express
+    container_name: 3city_mongo_express
     restart: always
     ports:
       - "8082:8081"
@@ -27,4 +27,4 @@ volumes:
 
 networks:
   default:
-    name: ptc-it_mongodb_network
+    name: 3city_mongodb_network
