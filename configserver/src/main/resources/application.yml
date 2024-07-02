@@ -7,7 +7,7 @@ spring:
     config:
       server:
         git:
-          uri: git@github.com:PawelKwidzinski/personal-dashboard-config.git
+          uri: git@github.com:PawelKwidzinski/my-dashboard-config.git
           default-label: main
           timeout: 5
           clone-on-start: true
