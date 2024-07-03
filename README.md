@@ -1,4 +1,4 @@
-# My-Dasboard - in progress
+# My-Dashboard - in progress
 ## General
 A microservice application that delivers data according to the developer's personal preferences such as IT job offers, local news and more.
 To visualize the retrieved data through microservices, it is planned to connect to Angular framework and deploy the frontend and backend on a Kubernetes cluster.
