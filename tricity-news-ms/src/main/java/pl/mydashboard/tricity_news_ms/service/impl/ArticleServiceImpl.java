@@ -36,6 +36,16 @@ public class ArticleServiceImpl implements IArticleService {
         return articleRepository.findAll();
     }
 
+    @Override
+    public List<Article> getAllArticlesByDate(LocalDate date) {
+        return articleRepository.findAllByDate(date);
+    }
+
+    @Override
+    public List<Article> getAllArticlesByTag(String tag) {
+        return articleRepository.findAllByTag(tag);
+    }
+
     @Scheduled(fixedDelay = 3_600_000)
     @Override
     public void save() {
@@ -80,7 +90,7 @@ public class ArticleServiceImpl implements IArticleService {
             String description = descriptions.get(i);
             String tag = tags.get(i);
 
-            Article article = new Article(url, description, tag.trim(), LocalDate.now());
+            Article article = new Article(url, description, tag.trim().toLowerCase(), LocalDate.now());
             Optional<Article> optUrlArticle = articleRepository.findByUrl(article.getUrl());
             optUrlArticle.ifPresentOrElse(
                     existingArticle -> log.info("Article urls already exists: {}", existingArticle.getUrl()),
